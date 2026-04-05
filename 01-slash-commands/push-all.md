@@ -22,6 +22,7 @@ Run in parallel:
 - API Keys: Any `*_API_KEY`, `*_SECRET`, `*_TOKEN` variables with real values (not placeholders like `your-api-key`, `xxx`, `placeholder`)
 - Large files: `>10MB` without Git LFS
 - Build artifacts: `node_modules/`, `dist/`, `build/`, `__pycache__/`, `*.pyc`, `.venv/`
+- C++ build artifacts: `build/`, `out/`, `CMakeCache.txt`, `CMakeFiles/`, `.ninja_deps`, `compile_commands.json`, `*.o`, `*.so`, `*.dll`, `*.exe`, `*.a`, `*.lib`, `*.pdb`
 - Temp files: `.DS_Store`, `thumbs.db`, `*.swp`, `*.tmp`
 
 **API Key Validation:**
@@ -40,7 +41,7 @@ SECRET=${YOUR_SECRET}
 ```
 
 **✅ Verify:**
-- `.gitignore` properly configured
+- `.gitignore` properly configured (includes build/, *.o, *.so, compile_commands.json for C++)
 - No merge conflicts
 - Correct branch (warn if main/master)
 - API keys are placeholders only
